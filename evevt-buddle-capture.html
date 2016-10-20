@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+
+            function sleep() {
+                console.log("grandpa: I am sleeping,well I just can't fall asleep");
+            }
+
+            function watchTV() {
+                console.log("father:I am watching TV");
+            }
+
+            function playingCard() {
+//                event.stopPropagation();
+                console.log("child:I am playing Card");
+            }
+
+            function doingHomework() {
+                // 阻止事件的进一步传播，但仍旧会执行接下来的代码9`
+                event.stopPropagation();
+                console.log("grandson:I am doing my homework T_T");
+            }
+
+            var grandpa = document.getElementById("grandpa");
+            var father = document.getElementById("father");
+            var child = document.getElementById("child");
+            var grandson = document.getElementById("grandson");
+
+//            事件冒泡
+            grandpa.addEventListener("click", sleep);
+            grandson.addEventListener("click", doingHomework);
+            father.addEventListener("click", watchTV);
+            child.addEventListener("click", playingCard);
+
+
+//            事件捕获
+//            grandpa.addEventListener("click", sleep, true);
+//            father.addEventListener("click", watchTV, true);
+//            child.addEventListener("click", playingCard, true);
+//            grandson.addEventListener("click", doingHomework, true);
+
+//            事件冒泡和事件捕获 同时存在
+//            grandpa.addEventListener("click", sleep, true);
+//            father.addEventListener("click", watchTV, false);
+//            child.addEventListener("click", playingCard, true);
+//            grandson.addEventListener("click", doingHomework, false);
+
+
+        }
+
+    </script>
+
+
+</head>
+<body>
+
+
+<div id="grandpa" style="width:500px;height:500px;background: red;margin:0 auto;vertical-align: middle;">grandpa
+    <div id="father" style="width:400px;height:400px;background: blue;margin:0 auto;vertical-align: middle;">father
+        <div id="child" style="width:300px;height:300px;background:pink;margin:0 auto;">child
+            <div id="grandson" style="width:100px;height:100px;background: white;margin:0 auto;">grandson</div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
