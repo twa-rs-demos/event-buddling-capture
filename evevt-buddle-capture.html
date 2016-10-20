@@ -23,7 +23,7 @@
             }
 
             function doingHomework() {
-                // 阻止事件的进一步传播，但仍旧会执行接下来的代码9`
+        // 阻止事件的进一步传播，但仍旧会执行接下来的代码9`
                 event.stopPropagation();
                 console.log("grandson:I am doing my homework T_T");
             }
@@ -41,16 +41,16 @@
 
 
 //            事件捕获
-//            grandpa.addEventListener("click", sleep, true);
-//            father.addEventListener("click", watchTV, true);
-//            child.addEventListener("click", playingCard, true);
-//            grandson.addEventListener("click", doingHomework, true);
+            grandpa.addEventListener("click", sleep, true);
+            father.addEventListener("click", watchTV, true);
+            child.addEventListener("click", playingCard, true);
+            grandson.addEventListener("click", doingHomework, true);
 
 //            事件冒泡和事件捕获 同时存在
-//            grandpa.addEventListener("click", sleep, true);
-//            father.addEventListener("click", watchTV, false);
-//            child.addEventListener("click", playingCard, true);
-//            grandson.addEventListener("click", doingHomework, false);
+            grandpa.addEventListener("click", sleep, true);
+            father.addEventListener("click", watchTV, false);
+            child.addEventListener("click", playingCard, true);
+            grandson.addEventListener("click", doingHomework, false);
 
 
         }
